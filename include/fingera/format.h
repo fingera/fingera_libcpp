@@ -109,29 +109,4 @@ static inline bool from_hex(const std::string &str, T &value) {
   return size == format_detail::size(value);
 }
 
-/*
-template <typename T,
-          P_IF(std::is_trivial<T>::value && !std::is_pointer<T>::value)>
-static inline void hex_dump(const T &value, bool upper = true) {
-  fingera_hex_dump(&value, sizeof(T), upper ? 1 : 0);
-}
-
-template <typename T, P_IF(std::is_trivial<T>::value)>
-static inline void hex_dump(const T *value, bool upper = true) {
-  fingera_hex_dump(value, sizeof(T), upper ? 1 : 0);
-}
-
-template <typename T,
-          P_IF(std::is_trivial<T>::value && !std::is_pointer<T>::value)>
-static inline void hex_dump(const std::vector<T> &value, bool upper = true) {
-  fingera_hex_dump(value.data(), value.size() * sizeof(T), upper ? 1 : 0);
-}
-
-template <typename T, std::size_t N,
-          P_IF(std::is_trivial<T>::value && !std::is_pointer<T>::value)>
-static inline void hex_dump(const std::array<T, N> &value, bool upper = true) {
-  fingera_hex_dump(value.data(), value.size() * sizeof(T), upper ? 1 : 0);
-}
-*/
-
 }  // namespace fingera
